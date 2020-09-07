@@ -14,12 +14,12 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-      console.log(`componentDidMount refButton = ${this.props.refButton}`);
+    this._updateButtonState();
   }
 
   componentDidUpdate() {
-    console.log(`componentDidUpdate refButton = ${this.props.refButton}`);
-}
+    this._updateButtonState();
+  }
 
   render () {
     return(
@@ -30,6 +30,10 @@ class Form extends React.Component {
           </label>
         </form>
     );
+  }
+
+  _updateButtonState() {
+    this.props.refButton && (this.props.refButton.disabled = (!this.state.value ? true : false));
   }
 }
 

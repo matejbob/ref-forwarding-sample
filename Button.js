@@ -8,13 +8,14 @@ class Button extends React.Component {
 
   render () {
     return(
-        <input type="submit" ref={this.props.buttonRef} value="Submit" />
+        <input type="submit" ref={this.props.buttonRef} value="Submit" onClick={this.props.onSubmit} />
     );
   }
 }
 
 Button.propTypes = {
-    buttonRef: PropTypes.func
+    buttonRef: PropTypes.func,
+    onSubmit: PropTypes.func
 };
 
 export default Button;
